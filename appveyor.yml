@@ -10,7 +10,7 @@ environment:
       PYTHON_ARCH: "32"
       
 install:
-  - choco install opencv -version 3.1.0.20160701 "/InstallationPath:C:\tools"
+  - choco install opencv -version 3.1.0.20160701 '/InstallationPath:"C:\tools"'
   
 before_build:
   - SET ARCH=x64

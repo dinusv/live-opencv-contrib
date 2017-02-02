@@ -31,10 +31,11 @@ build_script:
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - mv livecv-deploy-kit-master/* .
   - python --version
-  - python livecv_build.py
-  - python livecv_deploy.py
   - python livecv_build.py -b 64
   - python livecv_deploy.py -b 64
+  - SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\x86\vc12
+  - python livecv_build.py -b 32
+  - python livecv_deploy.py -b 32
 
 
 deploy:

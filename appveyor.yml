@@ -15,8 +15,6 @@ install:
 before_build:
   - SET ARCH=x64
   - SET APP_PATH=%CD%
-  - CD C:\tools
-  - DIR
   - IF EXIST C:\tools\OpenCV* CD C:\tools*
   - SET OPENCV_ROOT_PATH=%CD%\opencv
   - CD %APP_PATH%

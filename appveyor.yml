@@ -17,7 +17,7 @@ before_build:
   - SET APP_PATH=%CD%
   - CD C:\tools
   - DIR
-  - IF EXIST C:\tools\OpenCV* CD C:\OpenCV*
+  - IF EXIST C:\tools\OpenCV* CD C:\tools*
   - SET OPENCV_ROOT_PATH=%CD%\opencv
   - CD %APP_PATH%
   - SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\%ARCH%\vc12

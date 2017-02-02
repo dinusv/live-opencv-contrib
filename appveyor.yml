@@ -26,6 +26,7 @@ build_script:
   - ps: 7z x -y $file -o"."
   - dir
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - mv livecv-deploy-kit-master/* .
   - python --version
   - python livecv_build.py
   - python livecv_deploy.py

@@ -1,0 +1,25 @@
+/*!
+\page cpp-modules.html
+
+\indexpage Index
+\title C++ Modules
+
+\table
+    \row
+        \li \l {lcvlib_cpp}{lib}
+        \li The lcvlib or lcvapi module.
+    \row
+        \li \l {lcvcore_cpp}{core}
+        \li The lcvcore module.
+    \row
+        \li \l {lcvimgproc_cpp}{imgproc}
+        \li The lcvimgproc module.
+    \row
+        \li \l {lcvvideo_cpp}{video}
+        \li The lcvvideo module.
+    \row
+        \li \l {lcvphoto_cpp}{photo}
+        \li The lcvphoto module.
+\endtable
+
+*/

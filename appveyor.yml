@@ -8,7 +8,10 @@ environment:
     - PYTHON: "C:\\Python35"
       PYTHON_VERSION: "3.5.0"
       PYTHON_ARCH: "32"
-
+      
+install:
+  - choco install opencv -version 3.1.0.20160701
+  
 before_build:
   - SET ARCH=x64
   - SET APP_PATH=%CD%
@@ -22,9 +25,7 @@ build_script:
   - cd build
   - ps: $file = "$pwd\deploy.zip"
   - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/livecv-deploy-kit/archive/master.zip", $file)
-  - dir
   - ps: 7z x -y $file -o"."
-  - dir
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - mv livecv-deploy-kit-master/* .
   - python --version

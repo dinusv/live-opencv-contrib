@@ -23,6 +23,8 @@ before_build:
 
 build_script:
   - cd build
+  - echo %OPENCV_DIR%
+  - echo %QTDIR%
   - ps: $file = "$pwd\deploy.zip"
   - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/livecv-deploy-kit/archive/master.zip", $file)
   - ps: 7z x -y $file -o"."
@@ -33,3 +35,19 @@ build_script:
   - python livecv_deploy.py
   - python livecv_build.py -b 64
   - python livecv_deploy.py -b 64
+
+
+deploy:
+  release: Live CV v$(APPVEYOR_REPO_TAG_NAME)
+  description: '<description>'
+  provider: GitHub
+  auth_token:
+    secure: 'ewCMPMl6d/IVBZ0r/ZApqeh0NgF/0UMMtKTqvQcmTNFb3uK57XFyqbZBHLDICAVC'
+  artifact: 'build\*.zip'            # upload all NuGet packages to release assets
+  draft: true
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    appveyor_repo_tag: true    
+    
+    

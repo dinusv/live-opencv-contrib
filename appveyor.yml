@@ -39,7 +39,7 @@ build_script:
 
 deploy:
   release: Live CV v$(APPVEYOR_REPO_TAG_NAME)
-  description: '<description>'
+  description: 'View Changelog.md for further details.'
   provider: GitHub
   auth_token:
     secure: 'ewCMPMl6d/IVBZ0r/ZApqeh0NgF/0UMMtKTqvQcmTNFb3uK57XFyqbZBHLDICAVC'

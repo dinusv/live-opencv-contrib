@@ -33,6 +33,7 @@ build_script:
   - python --version
   - python livecv_build.py -b 64
   - python livecv_deploy.py -b 64
+  - dir
 
 artifacts:
   - path: 'build\livecv-*.zip'

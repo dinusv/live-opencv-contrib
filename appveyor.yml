@@ -23,7 +23,7 @@ build_script:
   - ps: $file = "$pwd\deploy.zip"
   - ps: (new-object System.Net.WebClient).Downloadfile("https://github.com/livecv/livecv-deploy-kit/archive/master.zip", $file)
   - dir
-  - ps: 7z x -y $file -o"." > nul
+  - ps: 7z x -y $file -o"."
   - dir
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python --version

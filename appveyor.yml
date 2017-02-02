@@ -35,7 +35,7 @@ build_script:
   - python livecv_deploy.py -b 64
 
 artifacts:
-  - path: 'build\*.zip'
+  - path: 'build\livecv-*.zip'
     name: Release
 
 deploy:

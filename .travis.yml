@@ -7,21 +7,31 @@ compiler:
   - gcc
 
 before_install:
-    - sudo add-apt-repository ppa:beineri/opt-qt562 -y
-    - sudo apt-get update -qq
+  - sudo add-apt-repository ppa:beineri/opt-qt562 -y
+  - sudo apt-get update -qq
     
 install:
-    - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia
-    - sudo apt-get install cmake-data cmake unzip
+  - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia
+  - sudo apt-get install cmake-data cmake unzip
+    
+    
+before_script:
+  - git clone https://github.com/Itseez/opencv.git
+  - cd opencv
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make -j8
+  - sudo make -j8 install
     
 script:
-    - source /opt/qt56/bin/qt56-env.sh
-    - cd build
-    - wget https://github.com/livecv/livecv-deploy-kit/archive/master.zip
-    - unzip master.zip
-    - mv livecv-deploy-kit-master/* .
-    - export OPENCV_DIR=/opencv
-    - ls
-    - python3 livecv_build.py
-    - ls
-    - python3 livecv_deploy.py -d gcc
+  - source /opt/qt56/bin/qt56-env.sh
+  - cd build
+  - wget https://github.com/livecv/livecv-deploy-kit/archive/master.zip
+  - unzip master.zip
+  - mv livecv-deploy-kit-master/* .
+  - export OPENCV_DIR=/opencv
+  - ls
+  - python3 livecv_build.py
+  - ls
+  - python3 livecv_deploy.py -d gcc

@@ -11,7 +11,7 @@ before_install:
   - sudo apt-get update -qq
     
 install:
-  - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia
+  - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia qt56websockets
   - sudo apt-get install cmake-data cmake unzip
     
     
@@ -23,6 +23,7 @@ before_script:
   - cmake ..
   - make -j8
   - sudo make -j8 install
+  - cd ../..
     
 script:
   - source /opt/qt56/bin/qt56-env.sh

@@ -3,12 +3,35 @@ language: generic
 os:
   - linux
 
+sudo: required
+
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
+      - gcc-5
       - g++-5
+      - build-essential
+      - cmake
+      - cmake-data
+      - git
+      - libgtk2.0-dev
+      - pkg-config
+      - libavcodec-dev
+      - libavformat-dev
+      - libswscale-dev
+      - python-dev
+      - python-numpy
+      - libtbb2
+      - libtbb-dev
+      - libjpeg-dev
+      - libpng-dev
+      - libtiff-dev
+      - libjasper-dev
+      - libdc1394-22-dev
+      - unzip
+      
 env: GCC_VERSION=5 CPP=11 COMPILER=g++-5 CXX=g++-5 CC=gcc-5
 
 before_install:
@@ -17,10 +40,11 @@ before_install:
     
 install:
   - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia qt56websockets
-  - sudo apt-get install cmake-data cmake unzip
     
     
 before_script:
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
+  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-5 /usr/bin/g++
   - git clone https://github.com/Itseez/opencv.git
   - cd opencv
   - mkdir build

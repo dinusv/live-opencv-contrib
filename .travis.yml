@@ -36,3 +36,4 @@ script:
   - python3 livecv_build.py
   - ls
   - python3 livecv_deploy.py -d gcc
+  - python3 livecv_deploy.py -d gcc_standalone

@@ -20,4 +20,8 @@ script:
     - wget https://github.com/livecv/livecv-deploy-kit/archive/master.zip
     - unzip master.zip
     - mv livecv-deploy-kit-master/* .
-    - export OPENCV_DIR /opencv
+    - export OPENCV_DIR=/opencv
+    - ls
+    - python3 livecv_build.py
+    - ls
+    - python3 livecv_deploy.py -d gcc

@@ -1,0 +1,20 @@
+language: cpp
+
+compiler:
+  - gcc
+
+before_install:
+    - sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y
+    - sudo apt-get update -qq
+    
+install:
+    - sudo apt-get install -qq qt57base qt57declarative qt57quickcontrols qt57quickcontrols2 qt57script qt57imageformats qt57multimedia
+    - sudo apt-get install cmake-data cmake unzip
+    
+script:
+    - source /opt/qt57/bin/qt57-env.sh
+    - cd build
+    - wget https://github.com/livecv/livecv-deploy-kit/archive/master.zip
+    - unzip master.zip
+    - mv livecv-deploy-kit-master/* .
+    - export OPENCV_DIR /opencv

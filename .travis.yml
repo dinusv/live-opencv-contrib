@@ -10,7 +10,7 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-5
-env: COMPILER=g++-5
+env: GCC_VERSION=5 CPP=11 COMPILER=g++-5
 
 
 before_install:

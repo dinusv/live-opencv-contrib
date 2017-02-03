@@ -3,15 +3,13 @@ language: cpp
 os:
   - linux
 
-compiler: gcc
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-5
-env: GCC_VERSION=5 CPP=11 COMPILER=g++-5
-
+env: GCC_VERSION=5 CPP=11 COMPILER=g++-5 CXX=g++-5 CC=gcc-5
 
 before_install:
   - sudo add-apt-repository ppa:beineri/opt-qt562 -y

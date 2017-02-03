@@ -11,11 +11,11 @@ before_install:
     - sudo apt-get update -qq
     
 install:
-    - sudo apt-get install -qq qt57base qt57declarative qt57quickcontrols qt57quickcontrols2 qt57script qt57imageformats qt57multimedia
+    - sudo apt-get install -qq qt56base qt56declarative qt56quickcontrols qt56quickcontrols2 qt56script qt56imageformats qt56multimedia
     - sudo apt-get install cmake-data cmake unzip
     
 script:
-    - source /opt/qt57/bin/qt57-env.sh
+    - source /opt/qt56/bin/qt56-env.sh
     - cd build
     - wget https://github.com/livecv/livecv-deploy-kit/archive/master.zip
     - unzip master.zip

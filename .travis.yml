@@ -68,14 +68,17 @@ script:
   - python3 livecv_deploy.py -d gcc_standalone
 
 before_deploy:
-  - export FILE_TO_UPLOAD=$(ls build/*.tar.gz)
+  - ls build
+  - export LIVECV_LAUNCHER=($(ls build/*.tar.gz))
+  - echo ${LIVECV_LAUNCHER[0]}
+  - echo ${LIVECV_LAUNCHER[1]}
  
 deploy:
   provider: releases
   api_key:
     - secure: "wKQ72qKQ6MkNC5eZwUBv2PdyRkVYZBO12cNz8VCvc43gTuUh3azbzRVH/tN/SPg75zimjWsex8FLUgZRJFNW/z6e4SnzVhKIx6oKROmKgx7NXU9wdEFgSQ0MGXwGidDAPaWEYBbO/zppOHp6iDW/qv5lmhlT+nh4z6YqOzKoHlYf2DW0RgEZG4anYFg3NTDYtdvOreYRq6C9T2siL65mipeyJjkcC5SA/2JKDcGUfof6zknb/eZ1F17YnlN9QbfxFE0KvN4UrROAncEOg8YzE7p3kq348c0+f1XVuaOhIVVrf+h8d4HKuCofFyAv78t8OgYfZWJP2BG1kUD5Fj89rxRJzZls7h08l9A9CQpQDfSxVHuqIxEmUAaAixQ27VGw9lWax1hTheRoI85bzkdBZuL6kGmCCroQHfjFj5GF5LrfhH/KudXDFyP9EA8NdMicDAE7JVEoyrn9KSeS1/4QnOW5MLUNsZNU3B0r5zbabuW+/auVgtgOBY2hCkRoGjzWVPcdgvY2JhdZzFGLVmAeJG7rkD5GTsMhKCZDb71NaRhKPf9WfORqM/b3ZxKfUxGFtAG32jBLIG/HuxsLVH2EHmZ1O1AWtwi15brXYD2SwbAw0i+TBw4p8nAJLlII1c3+a26CjToJpbZrquRzHU5zm3FJLSSLK3OSjvM/SyaqUyM="
   file_glob: true
-  file: "${FILE_TO_UPLOAD}"
+  file: "${LIVECV_LAUNCHER[0]}"
   skip_cleanup: true
   on:
     tags: true

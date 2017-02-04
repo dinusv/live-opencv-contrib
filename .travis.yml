@@ -68,8 +68,8 @@ script:
   - python3 livecv_deploy.py -d gcc_standalone
 
 before_deploy:
-  - ls build
-  - export LIVECV_LAUNCHER=($(ls build/*.tar.gz))
+  - ls
+  - export LIVECV_LAUNCHER=($(ls *.tar.gz))
   - echo ${LIVECV_LAUNCHER[0]}
   - echo ${LIVECV_LAUNCHER[1]}
  

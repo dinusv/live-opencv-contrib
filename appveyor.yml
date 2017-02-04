@@ -40,7 +40,7 @@ artifacts:
     name: Release
 
 deploy:
-  release: Live CV $(APPVEYOR_REPO_TAG_NAME)
+  release: $(APPVEYOR_REPO_TAG_NAME)
   description: 'View Changelog.md for further details.'
   provider: GitHub
   auth_token:

@@ -70,8 +70,8 @@ script:
 before_deploy:
   - ls
   - ls *.tar.gz
-  - export LIVECV_STANDALONE=$(ls *.tar.gz | tail -n +2 | head -1)
-  - export LIVECV=$(ls *.tar.gz | tail -n +3 | head -1)
+  - export LIVECV_STANDALONE=$(ls *.tar.gz | tail -n +1 | head -1)
+  - export LIVECV=$(ls *.tar.gz | tail -n +2 | head -1)
   - echo ${LIVECV_STANDALONE}
   - echo ${LIVECV}
  

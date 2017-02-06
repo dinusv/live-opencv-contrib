@@ -50,7 +50,7 @@ install:
   - unzip master.zip
   - mv livecv-deploy-kit-master/* .
   - wget http://download.qt.io/official_releases/qt/5.7/5.7.0/qt-opensource-linux-x64-5.7.0.run
-  - chmod 117 qt-opensource-linux-x64-5.7.0.run
+  - sudo chmod 777 qt-opensource-linux-x64-5.7.0.run
   - ./qt-opensource-linux-x64-5.7.0.run --script ../install-qt.qs --verbose --silent -platform minimal
   - export QTDIR=/opt/qt/5.7/gcc_64
   

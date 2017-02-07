@@ -1,4 +1,4 @@
-language: generic
+language: cpp
 
 os:
   - linux
@@ -32,12 +32,12 @@ addons:
       - libdc1394-22-dev
       - unzip
       
-env: GCC_VERSION=5 CPP=11 COMPILER=g++-5 CXX=g++-5 CC=gcc-5
+#env: GCC_VERSION=5 CPP=11 COMPILER=g++-5 CXX=g++-5 CC=gcc-5
     
 install:
   - sudo apt-get install -y libtiff5 libtiff5-dev
-  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
-  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-5 /usr/bin/g++
+#  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-5 /usr/bin/gcc
+#  - sudo unlink /usr/bin/g++ && sudo ln -s /usr/bin/g++-5 /usr/bin/g++
   - git clone https://github.com/Itseez/opencv.git
   - cd opencv
   - mkdir build
